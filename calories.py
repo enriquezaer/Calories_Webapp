@@ -10,12 +10,12 @@ class Calories:
         self.temperature = temperature
 
     def calculate(self):
-        result = 10 * self.weight + 6.5 * self.height + 5 - self.temperature * 10
+        result = 10 * self.weight + 6.5 * self.height + 5 - self.temperature.get() * 10
         return result
 
 
 if __name__ == "__main__":
-    temperature = Temperature(country="honduras", location="tegucigalpa")
-    calories = Calories(weight=70, height=127, age=41, temparature=temperature)
+    temperature_ = Temperature(country="honduras", location="tegucigalpa")
+    calories = Calories(weight=70, height=127, age=41, temperature=temperature_)
     print(calories.calculate())
 

@@ -31,7 +31,8 @@ app.add_url_rule('/caloriesForm',
                  view_func=CaloriesFormPages.as_view('calories_form'))
 
 app.run(debug=True)
+
 if __name__ == '__main__':
     print('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
