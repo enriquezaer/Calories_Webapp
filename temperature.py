@@ -27,5 +27,5 @@ class Temperature:
 
 
 if __name__ == "__main__":
-    temperature = Temperature(country="usa", location="san francisco")
+    temperature = Temperature(country="honduras", location="tegucigalpa")
     print(temperature.get())

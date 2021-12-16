@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Forma de Calorias</title>
+    <link rel="stylesheet" href="static/main.css">
 </head>
 <body>
+<h2> Calorie Forms</h2>
 <p>Forma para el Calculo de las Calorias</p>
 <form action="/caloriesForm" method="post">
     {{calories.weight.label}}
+    <br>
+    {{calories.weight}}
+    <br><br>
+    {{calories.height.label}}
+    <br>
+    {{calories.height}}
+    <br><br>
+    {{calories.age.label}}
+    <br>
+    {{calories.age}}
+    <br><br>
+    {{calories.city.label}}
+    <br>
+    {{calories.city}}
+    <br><br>
+    {{calories.country.label}}
+    <br>
+    {{calories.country}}
+    <br><br>
+    {{calories.button_calc}}
+    {%if result %}
+    <p>{{val}}</p>
+    {% endif %}
 </form>
 </body>
 </html>
