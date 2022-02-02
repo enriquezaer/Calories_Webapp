@@ -8,19 +8,22 @@ app = Flask(__name__)
 
 
 class HomePage(MethodView):
+    # Clase que crea la pagina inicia HTML inicial
     def get(self):
         return render_template('index.html')
 
 
 class CaloriesFormPages(MethodView):
+    # Pagina que captura los datos, calcula y muestra los resultados
+
     def get(self):
+        # Metodo Get
         calories = CaloriesForm()
-        print("Haciendo llamado Get:")
         return render_template('calories_form_page.html',
                                calories=calories)
 
     def post(self):
-        print("Haciendo llamado Post:")
+        # Metodo POST
         calories = CaloriesForm(request.form)
         temperature_ = Temperature(country=str(calories.country.data),
                                    location=str(calories.city.data))
@@ -29,6 +32,7 @@ class CaloriesFormPages(MethodView):
                              height=float(calories.height.data),
                              age=float(calories.age.data),
                              temperature=temperature_)
+
         val_result = calories_.calculate()
 
         result = True
@@ -56,5 +60,3 @@ app.add_url_rule('/caloriesForm',
                  view_func=CaloriesFormPages.as_view('calories_form'))
 
 app.run(debug=True)
-
-
